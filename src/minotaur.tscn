@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2la84prxkei5"]
+
+[ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/minotaur.gd" id="1_axq4a"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tsmwf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jaynm"]
+
+[node name="Minotaur" type="CharacterBody3D"]
+script = ExtResource("1_axq4a")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tsmwf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_jaynm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true

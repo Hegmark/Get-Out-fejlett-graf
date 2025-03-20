@@ -1,38 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://vfx4x7344jij"]
+[gd_scene load_steps=9 format=3 uid="uid://vfx4x7344jij"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0cvg"]
-albedo_color = Color(0.625278, 0.445087, 0.0636714, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at0py"]
+albedo_color = Color(0.840095, 0.538615, 0.00535214, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_at0py"]
-material = SubResource("StandardMaterial3D_f0cvg")
-size = Vector3(2, 6, 2)
+[sub_resource type="BoxMesh" id="BoxMesh_tlj5k"]
+material = SubResource("StandardMaterial3D_at0py")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_at0py"]
-data = PackedVector3Array(-1, 3, 1, 1, 3, 1, -1, -3, 1, 1, 3, 1, 1, -3, 1, -1, -3, 1, 1, 3, -1, -1, 3, -1, 1, -3, -1, -1, 3, -1, -1, -3, -1, 1, -3, -1, 1, 3, 1, 1, 3, -1, 1, -3, 1, 1, 3, -1, 1, -3, -1, 1, -3, 1, -1, 3, -1, -1, 3, 1, -1, -3, -1, -1, 3, 1, -1, -3, 1, -1, -3, -1, 1, 3, 1, -1, 3, 1, 1, 3, -1, -1, 3, 1, -1, 3, -1, 1, 3, -1, -1, -3, 1, 1, -3, 1, -1, -3, -1, 1, -3, 1, 1, -3, -1, -1, -3, -1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlj5k"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_res57"]
-albedo_color = Color(0.481383, 0.282814, 0.0662879, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlj5k"]
+albedo_color = Color(0.415849, 0.713697, 0.536124, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wbh36"]
-material = SubResource("StandardMaterial3D_res57")
-size = Vector3(2, 1, 2)
+material = SubResource("StandardMaterial3D_tlj5k")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_at0py"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_at0py"]
+size = Vector2(44, 36)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tlj5k"]
-data = PackedVector3Array(-1, 0.5, 1, 1, 0.5, 1, -1, -0.5, 1, 1, 0.5, 1, 1, -0.5, 1, -1, -0.5, 1, 1, 0.5, -1, -1, 0.5, -1, 1, -0.5, -1, -1, 0.5, -1, -1, -0.5, -1, 1, -0.5, -1, 1, 0.5, 1, 1, 0.5, -1, 1, -0.5, 1, 1, 0.5, -1, 1, -0.5, -1, 1, -0.5, 1, -1, 0.5, -1, -1, 0.5, 1, -1, -0.5, -1, -1, 0.5, 1, -1, -0.5, 1, -1, -0.5, -1, 1, 0.5, 1, -1, 0.5, 1, 1, 0.5, -1, -1, 0.5, 1, -1, 0.5, -1, 1, 0.5, -1, -1, -0.5, 1, 1, -0.5, 1, -1, -0.5, -1, 1, -0.5, 1, 1, -0.5, -1, -1, -0.5, -1)
+data = PackedVector3Array(22, 0, 18, -22, 0, 18, 22, 0, -18, -22, 0, 18, -22, 0, -18, 22, 0, -18)
 
 [node name="Tiles" type="Node"]
 
 [node name="Wall" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-mesh = SubResource("BoxMesh_at0py")
+mesh = SubResource("BoxMesh_tlj5k")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
-shape = SubResource("ConcavePolygonShape3D_at0py")
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("BoxShape3D_tlj5k")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.312, 0.5, 6.721)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.63191, 11.4151)
 mesh = SubResource("BoxMesh_wbh36")
-skeleton = NodePath("../Wall")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00312138, 0, 0.0150123)
+shape = SubResource("BoxShape3D_at0py")
+
+[node name="floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_at0py")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_tlj5k")
