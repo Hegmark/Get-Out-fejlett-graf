@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	
 	apply_central_force($TwistPivot.basis * input * 1500.0 * delta)
 	
-	var aligned_force = $TwistPivot.basis * input
+	#var aligned_force = $TwistPivot.basis * input
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

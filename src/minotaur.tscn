@@ -16,4 +16,6 @@ mesh = SubResource("CapsuleMesh_tsmwf")
 shape = SubResource("CapsuleShape3D_jaynm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -50)
