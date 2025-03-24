@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://vfx4x7344jij"]
+[gd_scene load_steps=10 format=3 uid="uid://vfx4x7344jij"]
+
+[ext_resource type="Texture2D" uid="uid://hac0860q1nq4" path="res://src/textures/brick_wall.jpg" id="1_tlj5k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_at0py"]
-albedo_color = Color(0.840095, 0.538615, 0.00535214, 1)
+albedo_color = Color(0.839216, 0.537255, 0.00392157, 0)
+albedo_texture = ExtResource("1_tlj5k")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tlj5k"]
 material = SubResource("StandardMaterial3D_at0py")
+size = Vector3(3, 3, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tlj5k"]
 
@@ -25,11 +29,13 @@ data = PackedVector3Array(22, 0, 18, -22, 0, 18, 22, 0, -18, -22, 0, 18, -22, 0,
 [node name="Tiles" type="Node"]
 
 [node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28041, 0)
 mesh = SubResource("BoxMesh_tlj5k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_tlj5k")
 
 [node name="Floor" type="MeshInstance3D" parent="."]

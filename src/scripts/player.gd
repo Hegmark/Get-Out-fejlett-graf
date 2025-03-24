@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	
 	apply_central_force($TwistPivot.basis * input * 1500.0 * delta)
 	
-	#var aligned_force = $TwistPivot.basis * input
 	
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -22,8 +21,8 @@ func _process(delta: float) -> void:
 	$TwistPivot.rotate_y(twist_input)
 	$TwistPivot/PitchPivot.rotate_x(pitch_input)
 	$TwistPivot/PitchPivot.rotation.x = clamp($TwistPivot/PitchPivot.rotation.x, 
-		deg_to_rad(-30), 
-		deg_to_rad(30)
+		deg_to_rad(-60), 
+		deg_to_rad(60)
 	)
 	twist_input = 0.0
 	pitch_input = 0.0
