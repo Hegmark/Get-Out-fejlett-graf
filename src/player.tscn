@@ -24,3 +24,14 @@ shape = SubResource("CapsuleShape3D_4flbx")
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.471648, -0.361934)
 fov = 89.3777
+
+[node name="Flashlight" type="SpotLight3D" parent="TwistPivot/PitchPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471648, -0.0680367)
+light_energy = 4.0
+shadow_enabled = true
+spot_range = 30.0
+spot_angle = 25.0
+
+[node name="RayCast3D" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D/Flashlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.528414, -0.836134)
+target_position = Vector3(0, 0, -30)

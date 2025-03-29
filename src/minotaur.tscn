@@ -19,3 +19,6 @@ shape = SubResource("CapsuleShape3D_jaynm")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, -50)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

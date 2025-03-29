@@ -1,8 +1,10 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var raycast: RayCast3D = $RayCast3D 
-@export var player: Node3D  
+@onready var raycast: RayCast3D = $RayCast3D
+@onready var player_raycast: RayCast3D = $"../../Player/TwistPivot/PitchPivot/Camera3D/Flashlight/RayCast3D"
+@onready var pause_timer := $Timer
+@export var player: Node3D 
 
 var waypoints := [Vector3(52, 0, 41), Vector3(-44, 0, 40), Vector3(-52, 0, -4), Vector3(-39, 0, -29), Vector3(1, 0, -30), Vector3(50, 0, -40)] 
 var current_index := 0 
@@ -10,12 +12,12 @@ var speed := 8
 var player_locked := false 
 
 func _ready():
-
 	if waypoints.size() > 0:
 		navigation_agent_3d.set_target_position(waypoints[current_index])
 
 func _physics_process(_delta: float) -> void:
-	
+	if !pause_timer.is_stopped():
+		return
 	check_vision()
 	move_along_path() 
 
@@ -24,7 +26,6 @@ func move_along_path():
 	var destination = navigation_agent_3d.get_next_path_position()
 	var local_destination = destination - global_position
 	var direction = local_destination.normalized()
-
 
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
 		speed = 8
@@ -36,6 +37,7 @@ func move_along_path():
 			destination = navigation_agent_3d.get_next_path_position()
 			local_destination = destination - global_position
 			direction = local_destination.normalized()
+			print("you lost....")
 			return
 
 		if !player_locked:
@@ -63,7 +65,16 @@ func check_vision():
 			player_locked = true
 			speed = 15
 			
+	if player_raycast.is_colliding():
+		var seen_object = player_raycast.get_collider()
+		if seen_object == self and player.get("flashlight_on"):
+			_start_pause()
+			
 func player_caught():
 	var distance_x = abs(player.global_transform.origin.x - global_transform.origin.x)
 	var distance_z = abs(player.global_transform.origin.z - global_transform.origin.z)
 	return distance_x <= 1.2 and distance_z <= 1.2
+	
+func _start_pause():
+	if pause_timer.is_stopped():
+		pause_timer.start(5)
