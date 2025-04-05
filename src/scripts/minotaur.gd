@@ -8,7 +8,7 @@ extends CharacterBody3D
 
 var waypoints := [Vector3(52, 0, 41), Vector3(-44, 0, 40), Vector3(-52, 0, -4), Vector3(-39, 0, -29), Vector3(1, 0, -30), Vector3(50, 0, -40)] 
 var current_index := 0 
-var speed := 8 
+var speed := 4 
 var player_locked := false 
 
 func _ready():
@@ -28,7 +28,7 @@ func move_along_path():
 	var direction = local_destination.normalized()
 
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
-		speed = 8
+		speed = 4
 
 		if player_locked and player_caught():
 			player_locked = false
