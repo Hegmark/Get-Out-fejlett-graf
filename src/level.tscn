@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://6qnce0fncvn5"]
+[gd_scene load_steps=16 format=3 uid="uid://6qnce0fncvn5"]
 
-[ext_resource type="PackedScene" uid="uid://cwpoguj18u1xt" path="res://src/player.tscn" id="2_4q7qo"]
+[ext_resource type="PackedScene" uid="uid://cwpoguj18u1xt" path="res://src/scenes/player.tscn" id="2_4q7qo"]
 [ext_resource type="Texture2D" uid="uid://co66jk14munif" path="res://src/textures/sand.jpg" id="2_feg4a"]
-[ext_resource type="PackedScene" uid="uid://c2la84prxkei5" path="res://src/minotaur.tscn" id="3_feg4a"]
-[ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/meshWithTexture.meshlib" id="4_feg4a"]
+[ext_resource type="PackedScene" uid="uid://c2la84prxkei5" path="res://src/scenes/minotaur.tscn" id="3_feg4a"]
+[ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/misc/meshWithTexture.meshlib" id="4_feg4a"]
 [ext_resource type="Texture2D" uid="uid://bp2q0lnxtsmtd" path="res://src/textures/battery.png" id="5_dh7pt"]
 [ext_resource type="Texture2D" uid="uid://by45csd7dbc5d" path="res://src/textures/progress.png" id="6_jq0je"]
-[ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/key.tscn" id="7_pothl"]
-[ext_resource type="PackedScene" uid="uid://c0x0ttqjfbjjy" path="res://src/wall_doorway.gltf" id="8_7i26j"]
+[ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/scenes/key.tscn" id="7_pothl"]
+[ext_resource type="PackedScene" uid="uid://c0x0ttqjfbjjy" path="res://src/models/wall_doorway.gltf" id="8_7i26j"]
+[ext_resource type="AudioStream" uid="uid://bavgrgch0i5ve" path="res://src/misc/1-Cave of Despair/Cave of Despair LOOP.wav" id="9_wc5yb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_68xyb"]
 sky_top_color = Color(0.00512726, 0.0489585, 0.112566, 1)
@@ -50,7 +51,7 @@ uv1_scale = Vector3(10, 10, 10)
 environment = SubResource("Environment_dh7pt")
 
 [node name="Player" parent="." groups=["navi"] instance=ExtResource("2_4q7qo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14846, 2.05, 54.2557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.64458, 2.05, 6.50037)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.663439, 0.707876, 0.242405, -0.734564, 0.554558, 0.390999, 0.142352, -0.437466, 0.887896, 0.40795, 28.04, 79.9244)
@@ -106,3 +107,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.76359, 14.614)
 
 [node name="wall_doorway2" parent="." instance=ExtResource("8_7i26j")]
 transform = Transform3D(1.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 1.93294, 1.05, -21.672)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_wc5yb")
+volume_db = -8.0
+autoplay = true

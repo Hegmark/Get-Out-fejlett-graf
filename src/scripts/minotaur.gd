@@ -4,20 +4,30 @@ extends CharacterBody3D
 @onready var raycast: RayCast3D = $RayCast3D
 @onready var player_raycast: RayCast3D = $"../../Player/TwistPivot/PitchPivot/Camera3D/Flashlight/RayCast3D"
 @onready var pause_timer := $Timer
-@export var player: Node3D 
+@onready var footsteps = $footsteps
+@onready var anim = $Walking_mummy/AnimationPlayer
+
 
 var waypoints := [Vector3(52, 0, 41), Vector3(-44, 0, 40), Vector3(-52, 0, -4), Vector3(-39, 0, -29), Vector3(1, 0, -30), Vector3(50, 0, -40)] 
 var current_index := 0 
-var speed := 4 
-var player_locked := false 
+var speed := 3 
+var player_locked := false
+
+@export var player: Node3D 
 
 func _ready():
 	if waypoints.size() > 0:
 		navigation_agent_3d.set_target_position(waypoints[current_index])
+		anim.play("walk")
 
 func _physics_process(_delta: float) -> void:
 	if !pause_timer.is_stopped():
+		footsteps.stop()
+		anim.play("idle")
 		return
+	if !footsteps.playing:
+		footsteps.play()
+		anim.play("walk")
 	check_vision()
 	move_along_path() 
 
@@ -28,7 +38,7 @@ func move_along_path():
 	var direction = local_destination.normalized()
 
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
-		speed = 4
+		speed = 3
 
 		if player_locked and player_caught():
 			player_locked = false

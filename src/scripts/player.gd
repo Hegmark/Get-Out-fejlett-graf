@@ -6,17 +6,20 @@ extends RigidBody3D
 @onready var cheat_cam = $"../Camera3D"
 @onready var key = $"../key"
 @onready var exit = $"../wall_doorway2"
+@onready var footsteps = $footsteps
 
 var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
-@export var flashlight_on = false
 var battery = 100.0  
 var battery_drain_rate = 0.8  
 var battery_low_threshold = 30.0  
 var flicker_chance = 0.1
 var is_mouse_unlocked = false
+var walking = false
+
 @export var key_found = false
+@export var flashlight_on = false
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -50,9 +53,17 @@ func _process(delta: float) -> void:
 	var input := Vector3.ZERO
 	input.x = Input.get_axis("movement_left", "movement_right")
 	input.z = Input.get_axis("movement_forward", "movement_backward")
+	apply_central_force($TwistPivot.basis * input * 1300.0 * delta)
+	if input.x != 0 or input.z != 0:
+		walking = true
+	else:
+		walking = false
 	
-	apply_central_force($TwistPivot.basis * input * 1500.0 * delta)
-
+	if walking and !footsteps.playing:
+		footsteps.play()
+	if not walking and footsteps.playing:
+		footsteps.stop()
+	
 	
 	$TwistPivot.rotate_y(twist_input)
 	$TwistPivot/PitchPivot.rotate_x(pitch_input)
