@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="kotprog"
-run/main_scene="uid://6qnce0fncvn5"
+run/main_scene="uid://bxw3vxmlc41lb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
