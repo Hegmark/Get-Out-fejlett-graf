@@ -7,6 +7,7 @@ extends RigidBody3D
 @onready var key = $"../key"
 @onready var exit = $"../wall_doorway"
 @onready var footsteps = $footsteps
+@onready var sky = $"../WorldEnvironment"
 
 var mouse_sensitivity := 0.001
 var twist_input := 0.0
@@ -53,7 +54,7 @@ func _process(delta: float) -> void:
 	var input := Vector3.ZERO
 	input.x = Input.get_axis("movement_left", "movement_right")
 	input.z = Input.get_axis("movement_forward", "movement_backward")
-	apply_central_force($TwistPivot.basis * input * 1300.0 * delta)
+	apply_central_force($TwistPivot.basis * input * 1000.0 * delta)
 	if input.x != 0 or input.z != 0:
 		walking = true
 	else:
@@ -87,14 +88,20 @@ func _input(event):
 		is_mouse_unlocked = !is_mouse_unlocked
 	if event.is_action_pressed("cam_change"):
 		toggle_camera()
+	if event.is_action_pressed("get_coordinates"):
+		print(self.global_position.x, "   ",  self.global_position.z)
 
 func toggle_camera():
 	if player_cam.current:
 		player_cam.current = false
 		cheat_cam.current = true
+		sky.environment.set_volumetric_fog_enabled(false)
+		key.toggleBeacon()
 	else:
 		player_cam.current = true
 		cheat_cam.current = false
+		sky.environment.set_volumetric_fog_enabled(true)
+		key.toggleBeacon()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ba03nuaf7ka5b" path="res://src/forest/level.tscn" id="3_pa27v"]
 [ext_resource type="FontFile" uid="uid://dqmnjyu1ticks" path="res://src/misc/fonts/conjuring.ttf" id="4_0cv6u"]
 [ext_resource type="Texture2D" uid="uid://co66jk14munif" path="res://src/textures/sand.jpg" id="4_aiveh"]
-[ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/misc/meshWithTexture.meshlib" id="5_0cv6u"]
+[ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/maze/meshWithTexture.meshlib" id="5_0cv6u"]
 [ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/maze/key.tscn" id="6_dk3r8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_68xyb"]

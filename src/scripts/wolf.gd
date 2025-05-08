@@ -1,14 +1,26 @@
 extends CharacterBody3D
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var raycast: RayCast3D = $RayCast3D
 @onready var player_raycast: RayCast3D = $"../../Player/TwistPivot/PitchPivot/Camera3D/Flashlight/RayCast3D"
 @onready var pause_timer := $Timer
 @onready var footsteps = $footsteps
 @onready var anim = $"wolf/AnimationPlayer"
 
 
-var waypoints := [Vector3(52, 0, 41), Vector3(-44, 0, 40), Vector3(-52, 0, -4), Vector3(-39, 0, -29), Vector3(1, 0, -30), Vector3(50, 0, -40)] 
+var waypoints := [
+	Vector3(-132, 0, 33),
+	Vector3(-50, 0, 47),
+	Vector3(89, 0, 38),
+	Vector3(-44, 0, 51),
+	Vector3(-71, 0, 62),
+	Vector3(-41, 0, 45),
+	Vector3(48, 0, 38),
+	Vector3(-103, 0, 52),
+	Vector3(-95, 0, 23),
+	Vector3(-13, 0, 32),
+	Vector3(75, 0, 37),
+	Vector3(-134, 0, 32),
+];
 var current_index := 0 
 var speed := 3 
 var player_locked := false
@@ -28,7 +40,7 @@ func _physics_process(_delta: float) -> void:
 	if !footsteps.playing:
 		footsteps.play()
 		anim.play("chase")
-	check_vision()
+	check_player_distance()
 	move_along_path() 
 
 
@@ -67,11 +79,12 @@ func move_along_path():
 	if velocity.length() < 0.1 and not navigation_agent_3d.is_navigation_finished():
 		navigation_agent_3d.set_target_position(navigation_agent_3d.target_position)
 
-func check_vision():
-	if raycast.is_colliding():
-		var seen_object = raycast.get_collider()
-		if seen_object == player and !player_caught():
-			navigation_agent_3d.set_target_position(Vector3(seen_object.global_position.x, 0, seen_object.global_position.z))
+func check_player_distance():
+	var distance_x = abs(player.global_transform.origin.x - global_transform.origin.x)
+	var distance_z = abs(player.global_transform.origin.z - global_transform.origin.z)
+	if distance_x <= 30 and distance_z <= 30:
+		if !player_caught():
+			navigation_agent_3d.set_target_position(Vector3(player.global_position.x, 0, player.global_position.z))
 			player_locked = true
 			speed = 15
 			
