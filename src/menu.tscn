@@ -1,13 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://bxw3vxmlc41lb"]
+[gd_scene load_steps=16 format=3 uid="uid://bxw3vxmlc41lb"]
 
 [ext_resource type="Script" uid="uid://cg6w237m4fim5" path="res://src/scripts/menu.gd" id="1_0cv6u"]
-[ext_resource type="PackedScene" uid="uid://6qnce0fncvn5" path="res://src/level.tscn" id="1_ts47l"]
+[ext_resource type="PackedScene" uid="uid://6qnce0fncvn5" path="res://src/maze/level.tscn" id="1_ts47l"]
 [ext_resource type="PackedScene" uid="uid://sb11xt15xbjo" path="res://src/fader.tscn" id="2_cyxwt"]
 [ext_resource type="FontFile" uid="uid://cif2qegk3gvli" path="res://src/misc/fonts/murder.ttf" id="3_aiveh"]
+[ext_resource type="PackedScene" uid="uid://ba03nuaf7ka5b" path="res://src/forest/level.tscn" id="3_pa27v"]
 [ext_resource type="FontFile" uid="uid://dqmnjyu1ticks" path="res://src/misc/fonts/conjuring.ttf" id="4_0cv6u"]
 [ext_resource type="Texture2D" uid="uid://co66jk14munif" path="res://src/textures/sand.jpg" id="4_aiveh"]
 [ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/misc/meshWithTexture.meshlib" id="5_0cv6u"]
-[ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/scenes/key.tscn" id="6_dk3r8"]
+[ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/maze/key.tscn" id="6_dk3r8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_68xyb"]
 sky_top_color = Color(0.00512726, 0.0489585, 0.112566, 1)
@@ -47,6 +48,7 @@ uv1_scale = Vector3(10, 10, 10)
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_0cv6u")
 mazescene = ExtResource("1_ts47l")
+forestscene = ExtResource("3_pa27v")
 
 [node name="menucam" type="Camera3D" parent="."]
 transform = Transform3D(0.854894, -0.184381, 0.484933, -0.0363649, 0.91112, 0.410535, -0.517527, -0.368598, 0.772206, 51.6249, 14.6397, 58.3393)

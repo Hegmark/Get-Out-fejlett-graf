@@ -8,6 +8,7 @@ extends Node3D
 @onready var fader = $CanvasLayer/Fader
 
 @export var mazescene: PackedScene
+@export var forestscene: PackedScene
 
 var chosen_scene = null
 
@@ -26,6 +27,7 @@ func on_maze_pressed():
 	
 func on_forest_pressed():
 	fader.fade_out()
+	chosen_scene = forestscene
 	#animation_player.play("fade_out")
 
 func on_castle_pressed():

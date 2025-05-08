@@ -5,7 +5,7 @@ extends RigidBody3D
 @onready var player_cam =  $TwistPivot/PitchPivot/Camera3D
 @onready var cheat_cam = $"../Camera3D"
 @onready var key = $"../key"
-@onready var exit = $"../wall_doorway2"
+@onready var exit = $"../wall_doorway"
 @onready var footsteps = $footsteps
 
 var mouse_sensitivity := 0.001
@@ -110,4 +110,4 @@ func check_key_dist():
 func check_exit_dist():
 	var distance_x = abs(exit.global_transform.origin.x - global_transform.origin.x)
 	var distance_z = abs(exit.global_transform.origin.z - global_transform.origin.z)
-	return distance_x <= 0.8 and distance_z <= 0.8
+	return distance_x <= 1.2 and distance_z <= 1.2
