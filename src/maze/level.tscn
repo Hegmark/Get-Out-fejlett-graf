@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://6qnce0fncvn5"]
+[gd_scene load_steps=23 format=4 uid="uid://6qnce0fncvn5"]
 
 [ext_resource type="PackedScene" uid="uid://cwpoguj18u1xt" path="res://src/maze/player.tscn" id="1_g7mpk"]
 [ext_resource type="Texture2D" uid="uid://co66jk14munif" path="res://src/textures/sand.jpg" id="2_g67j4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bp2q0lnxtsmtd" path="res://src/textures/battery.png" id="5_0kndr"]
 [ext_resource type="Texture2D" uid="uid://by45csd7dbc5d" path="res://src/textures/progress.png" id="6_3y2hn"]
 [ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/maze/key.tscn" id="7_ws5a7"]
+[ext_resource type="Script" uid="uid://bkww722ia8jhu" path="res://src/scripts/key_maze.gd" id="8_iymek"]
 [ext_resource type="Texture2D" uid="uid://ddxqtkxpnslns" path="res://src/textures/dungeon_texture.png" id="8_xtg1r"]
 [ext_resource type="AudioStream" uid="uid://bavgrgch0i5ve" path="res://src/misc/1-Cave of Despair/Cave of Despair LOOP.wav" id="9_cvmrh"]
 
@@ -180,6 +181,7 @@ texture_progress = ExtResource("6_3y2hn")
 
 [node name="key" parent="." instance=ExtResource("7_ws5a7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.76359, 10.0564)
+script = ExtResource("8_iymek")
 
 [node name="wall_doorway" type="MeshInstance3D" parent="." groups=["navi"]]
 transform = Transform3D(1.5, 0, 0, 0, 0.8, 0, 0, 0, 1, 1.93294, 1.05, -20.429)

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dtv12g7odgycq"
-path="res://.godot/imported/Injured_idle_mummy.fbx-737ef91767e1496f7e5cf396827ce3c8.scn"
+uid="uid://bfjc7hhsa1vyg"
+path="res://.godot/imported/Walking_mummy.fbx-60029f9a113823f9eceff60caa9e2fcd.scn"
 
 [deps]
 
-source_file="res://src/models/Injured_idle_mummy.fbx"
-dest_files=["res://.godot/imported/Injured_idle_mummy.fbx-737ef91767e1496f7e5cf396827ce3c8.scn"]
+source_file="res://src/models/mummy/Walking_mummy.fbx"
+dest_files=["res://.godot/imported/Walking_mummy.fbx-60029f9a113823f9eceff60caa9e2fcd.scn"]
 
 [params]
 

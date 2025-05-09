@@ -100,4 +100,4 @@ func player_caught():
 	
 func _start_pause():
 	if pause_timer.is_stopped():
-		pause_timer.start(5)
+		pause_timer.start(12)

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckswujtysj8lu"
-path.s3tc="res://.godot/imported/chase_wol_0.png-86a810fed31b3c814a9d23ecf1851e16.s3tc.ctex"
+uid="uid://b3mfxuunghxdv"
+path.s3tc="res://.godot/imported/Walking_mummy_0.png-04e9bc2a9fbac8d424eced4a39b74cf1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "77948f9a39690d24eabed184490964ea"
+}
 
 [deps]
 
-source_file="res://src/models/chase_wol_0.png"
-dest_files=["res://.godot/imported/chase_wol_0.png-86a810fed31b3c814a9d23ecf1851e16.s3tc.ctex"]
+source_file="res://src/models/mummy/Walking_mummy_0.png"
+dest_files=["res://.godot/imported/Walking_mummy_0.png-04e9bc2a9fbac8d424eced4a39b74cf1.s3tc.ctex"]
 
 [params]
 

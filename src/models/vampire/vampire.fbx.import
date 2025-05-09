@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://blvvpghcp0e2i"
-path="res://.godot/imported/Injured Idle_wolf.fbx-9816b2cb20e044a257b0d03dd240da63.scn"
+uid="uid://bv7n2ojv1y7ql"
+path="res://.godot/imported/vampire.fbx-59ba5a3d7c1862a6b527325da5d084e2.scn"
 
 [deps]
 
-source_file="res://src/models/Injured Idle_wolf.fbx"
-dest_files=["res://.godot/imported/Injured Idle_wolf.fbx-9816b2cb20e044a257b0d03dd240da63.scn"]
+source_file="res://src/models/vampire/vampire.fbx"
+dest_files=["res://.godot/imported/vampire.fbx-59ba5a3d7c1862a6b527325da5d084e2.scn"]
 
 [params]
 

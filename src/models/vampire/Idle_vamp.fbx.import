@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bfjc7hhsa1vyg"
-path="res://.godot/imported/Walking_mummy.fbx-655462906f7c37a4c10d70922a0d6b73.scn"
+uid="uid://onr3dh8v408b"
+path="res://.godot/imported/Idle_vamp.fbx-3d42e6263081d5c7efa662cec2446b6a.scn"
 
 [deps]
 
-source_file="res://src/models/Walking_mummy.fbx"
-dest_files=["res://.godot/imported/Walking_mummy.fbx-655462906f7c37a4c10d70922a0d6b73.scn"]
+source_file="res://src/models/vampire/Idle_vamp.fbx"
+dest_files=["res://.godot/imported/Idle_vamp.fbx-3d42e6263081d5c7efa662cec2446b6a.scn"]
 
 [params]
 

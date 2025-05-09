@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/minotaur.gd" id="1_axq4a"]
 [ext_resource type="AudioStream" uid="uid://7br0acdcnbja" path="res://src/misc/monster_walk.wav" id="2_icwhv"]
-[ext_resource type="Texture2D" uid="uid://b3mfxuunghxdv" path="res://src/models/Walking_mummy_0.png" id="3_layxn"]
-[ext_resource type="Animation" uid="uid://cf0shylrqjr2j" path="res://src/models/idle.res" id="4_5nu4c"]
+[ext_resource type="Texture2D" uid="uid://b3mfxuunghxdv" path="res://src/models/mummy/Walking_mummy_0.png" id="3_layxn"]
+[ext_resource type="Animation" uid="uid://cf0shylrqjr2j" path="res://src/models/mummy/idle.res" id="4_5nu4c"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tsmwf"]
 

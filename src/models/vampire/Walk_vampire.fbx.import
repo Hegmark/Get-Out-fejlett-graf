@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpx0uvnt504le"
-path="res://.godot/imported/chase_wol.fbx-46fe49c348a923c4b83b8a802a83f62b.scn"
+uid="uid://d3fwc0sfwiial"
+path="res://.godot/imported/Walk_vampire.fbx-bbadfffb5f73a080af0012c3ad4b48e9.scn"
 
 [deps]
 
-source_file="res://src/models/chase_wol.fbx"
-dest_files=["res://.godot/imported/chase_wol.fbx-46fe49c348a923c4b83b8a802a83f62b.scn"]
+source_file="res://src/models/vampire/Walk_vampire.fbx"
+dest_files=["res://.godot/imported/Walk_vampire.fbx-bbadfffb5f73a080af0012c3ad4b48e9.scn"]
 
 [params]
 

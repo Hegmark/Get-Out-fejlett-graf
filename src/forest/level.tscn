@@ -136,7 +136,6 @@ environment = SubResource("Environment_dh7pt")
 transform = Transform3D(0.663439, 0.707876, 0.242405, -0.734564, 0.554558, 0.390999, 0.142352, -0.437466, 0.887896, 0.40795, 28.04, 79.9244)
 light_color = Color(0.439289, 0.505519, 0.504907, 1)
 light_energy = 0.964
-shadow_enabled = true
 
 [node name="Player" parent="." groups=["navi"] instance=ExtResource("1_5qep4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, -2.46253)
