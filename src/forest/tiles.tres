@@ -1,11 +1,11 @@
 [gd_resource type="MeshLibrary" load_steps=100 format=4 uid="uid://behrieq0ljvmm"]
 
 [ext_resource type="Texture2D" uid="uid://bljfwr7jusddl" path="res://src/forest/glTF/Bark_NormalTree.png" id="1_8s0y8"]
-[ext_resource type="Texture2D" uid="uid://b2xpr27a3ywrw" path="res://src/forest/glTF/Bark_NormalTree_Normal.png" id="2_u4npg"]
+[ext_resource type="Texture2D" uid="uid://c8bvstgdt41hq" path="res://src/forest/glTF/Bark_NormalTree_Normal.png" id="2_u4npg"]
 [ext_resource type="Texture2D" uid="uid://d1apgq0ogaewr" path="res://src/forest/glTF/Leaves_NormalTree_C.png" id="3_qdfg0"]
 [ext_resource type="Texture2D" uid="uid://cxothsuwrtqr6" path="res://src/forest/glTF/Leaves.png" id="4_28ul5"]
 [ext_resource type="Texture2D" uid="uid://dtbp12ax2fcl1" path="res://src/forest/glTF/Bark_DeadTree.png" id="4_x2hkt"]
-[ext_resource type="Texture2D" uid="uid://dat6sepxjgtti" path="res://src/forest/glTF/Bark_DeadTree_Normal.png" id="5_28ul5"]
+[ext_resource type="Texture2D" uid="uid://duf8s4tvmtv60" path="res://src/forest/glTF/Bark_DeadTree_Normal.png" id="5_28ul5"]
 [ext_resource type="Texture2D" uid="uid://bv44grlbs0kyb" path="res://src/forest/glTF/Flowers.png" id="5_ipfqt"]
 [ext_resource type="Texture2D" uid="uid://cltohbos4ifdb" path="res://src/forest/glTF/Rocks_Diffuse.png" id="6_ipfqt"]
 [ext_resource type="Texture2D" uid="uid://twb2ukgqju3n" path="res://src/forest/glTF/Leaves_TwistedTree_C.png" id="6_wqmx5"]
