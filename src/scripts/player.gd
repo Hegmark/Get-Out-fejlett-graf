@@ -34,7 +34,8 @@ func _process(delta: float) -> void:
 		key.hide()
 		
 	if key_found and check_exit_dist():
-		print("you won")
+		Global.victory = true
+		get_tree().change_scene_to_file("res://src/end.tscn")
 		
 	if battery <= 0:
 		flashlight_on = false

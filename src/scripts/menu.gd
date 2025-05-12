@@ -9,6 +9,7 @@ extends Node3D
 
 @export var mazescene: PackedScene
 @export var forestscene: PackedScene
+@export var castlescene: PackedScene
 
 var chosen_scene = null
 
@@ -32,6 +33,7 @@ func on_forest_pressed():
 
 func on_castle_pressed():
 	fader.fade_out()
+	chosen_scene = castlescene
 	#animation_player.play("fade_out")
 
 func on_quit_pressed():

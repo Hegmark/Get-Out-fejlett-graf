@@ -33,8 +33,8 @@ func move_along_path():
 	var direction = local_destination.normalized()
 
 	if player_caught():
-		print("you lost....")
-		return
+		Global.victory = false
+		get_tree().change_scene_to_file("res://src/end.tscn")
 
 	navigation_agent_3d.set_target_position(Vector3(player.global_position.x, 0, player.global_position.z))
 

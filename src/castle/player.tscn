@@ -9,6 +9,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 
 [node name="Player" type="RigidBody3D"]
+collision_layer = 3
 lock_rotation = true
 linear_damp = 3.0
 script = ExtResource("1_3oa0s")
@@ -37,6 +38,7 @@ spot_angle = 25.0
 [node name="RayCast3D" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D/Flashlight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.528414, -0.836134)
 target_position = Vector3(0, 0, -30)
+collision_mask = 4
 
 [node name="breathing" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_o7hiw")

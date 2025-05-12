@@ -21,15 +21,16 @@ var waypoints := [
 	Vector3(75, 0, 37),
 	Vector3(-134, 0, 32),
 ];
-var current_index := 0 
 var speed := 3 
 var player_locked := false
+var rng := RandomNumberGenerator.new()
 
 @export var player: Node3D 
 
 func _ready():
+	rng.randomize()   
 	if waypoints.size() > 0:
-		navigation_agent_3d.set_target_position(waypoints[current_index])
+		navigation_agent_3d.set_target_position(waypoints[rng.randi_range(0, waypoints.size() - 1)])
 		anim.play("chase")
 
 func _physics_process(_delta: float) -> void:
@@ -53,18 +54,11 @@ func move_along_path():
 		speed = 3
 
 		if player_locked and player_caught():
-			player_locked = false
-			current_index = 0 
-			navigation_agent_3d.set_target_position(waypoints[current_index])  
-			destination = navigation_agent_3d.get_next_path_position()
-			local_destination = destination - global_position
-			direction = local_destination.normalized()
-			print("you lost....")
-			return
+			Global.victory = false
+			get_tree().change_scene_to_file("res://src/end.tscn")
 
 		if !player_locked:
-			current_index = (current_index + 1) % waypoints.size()
-			navigation_agent_3d.set_target_position(waypoints[current_index])
+			navigation_agent_3d.set_target_position(waypoints[rng.randi_range(0, waypoints.size() - 1)])
 
 	if player_locked:
 		navigation_agent_3d.set_target_position(Vector3(player.global_position.x, 0, player.global_position.z))

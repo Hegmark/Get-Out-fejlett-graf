@@ -1,12 +1,10 @@
 [gd_scene load_steps=12 format=4 uid="uid://d0ri1tte535u3"]
 
-[ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/minotaur.gd" id="1_wihgt"]
+[ext_resource type="Script" uid="uid://g3ok5yt4xc1k" path="res://src/scripts/vampire.gd" id="1_wihgt"]
 [ext_resource type="AudioStream" uid="uid://7br0acdcnbja" path="res://src/misc/monster_walk.wav" id="2_s5t5s"]
 [ext_resource type="Texture2D" uid="uid://cwtaewn0ro2ku" path="res://src/models/wolf/Injured Idle_wolf_0.png" id="3_4pmfs"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tsmwf"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jaynm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uskal"]
 resource_name = "M_HorrorCharacter"
@@ -544,15 +542,15 @@ _data = {
 &"idle": SubResource("Animation_35mlp")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wihgt"]
+
 [node name="vampire" type="CharacterBody3D"]
+collision_layer = 4
 script = ExtResource("1_wihgt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 mesh = SubResource("CapsuleMesh_tsmwf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_jaynm")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -809,3 +807,6 @@ skin = SubResource("Skin_ogjxn")
 libraries = {
 &"": SubResource("AnimationLibrary_dbpde")
 }
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_wihgt")

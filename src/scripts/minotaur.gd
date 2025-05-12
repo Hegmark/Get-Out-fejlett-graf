@@ -41,13 +41,8 @@ func move_along_path():
 		speed = 3
 
 		if player_locked and player_caught():
-			player_locked = false
-			current_index = 0 
-			navigation_agent_3d.set_target_position(waypoints[current_index])  
-			destination = navigation_agent_3d.get_next_path_position()
-			local_destination = destination - global_position
-			direction = local_destination.normalized()
-			print("you lost....")
+			Global.victory = false
+			get_tree().change_scene_to_file("res://src/end.tscn")
 			return
 
 		if !player_locked:
