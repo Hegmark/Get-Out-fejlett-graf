@@ -18,6 +18,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 Global="*res://src/scripts/global.gd"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [global_group]
 
 navi=""
