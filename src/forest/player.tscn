@@ -7,6 +7,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+radius = 0.377311
 
 [node name="Player" type="RigidBody3D"]
 lock_rotation = true
@@ -29,7 +30,8 @@ fov = 89.3777
 
 [node name="Flashlight" type="SpotLight3D" parent="TwistPivot/PitchPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.471648, -0.0680367)
-light_energy = 4.0
+light_energy = 20.0
+light_volumetric_fog_energy = 0.0
 shadow_enabled = true
 spot_range = 30.0
 spot_angle = 25.0

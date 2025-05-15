@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var player_raycast: RayCast3D = $"../../Player/TwistPivot/PitchPivot/Camera3D/Flashlight/RayCast3D"
 @onready var pause_timer := $Timer
 @onready var footsteps = $footsteps
-@onready var anim = $"wolf/AnimationPlayer"
+@onready var anim = $"vampire/AnimationPlayer"
 
  
 var speed := 1.5
@@ -13,7 +13,7 @@ var speed := 1.5
 
 func _ready():
 	navigation_agent_3d.set_target_position(Vector3(player.global_position.x, 0, player.global_position.z))
-	anim.play("chase")
+	anim.play("walk")
 
 func _physics_process(_delta: float) -> void:
 	if !pause_timer.is_stopped():
@@ -22,7 +22,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	if !footsteps.playing:
 		footsteps.play()
-		anim.play("chase")
+		anim.play("walk")
 	isCaught()
 	move_along_path() 
 
