@@ -32,7 +32,7 @@ func move_along_path():
 	var local_destination = destination - global_position
 	var direction = local_destination.normalized()
 
-	if player_caught():
+	if pause_timer.is_stopped() and player_caught():
 		Global.victory = false
 		get_tree().change_scene_to_file("res://src/end.tscn")
 

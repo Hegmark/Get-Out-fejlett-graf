@@ -1,21 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2x67aqgbuctl"]
+[gd_scene load_steps=5 format=3 uid="uid://d2x67aqgbuctl"]
 
 [ext_resource type="Script" uid="uid://c8xan7f6awc8" path="res://src/scripts/player.gd" id="1_3oa0s"]
 [ext_resource type="AudioStream" uid="uid://ccwd0d1bkaj6p" path="res://src/misc/breathing.wav" id="2_o7hiw"]
 [ext_resource type="AudioStream" uid="uid://da2vt0ejurpm5" path="res://src/misc/footsteps-grass.wav" id="3_61opt"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
+radius = 0.237479
 
 [node name="Player" type="RigidBody3D"]
 collision_layer = 3
 lock_rotation = true
 linear_damp = 3.0
 script = ExtResource("1_3oa0s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4flbx")

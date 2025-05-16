@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=4 uid="uid://b7qd3ncle0u3g"]
 
-[ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/minotaur.gd" id="1_3vq6h"]
+[ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/mummy.gd" id="1_3vq6h"]
 [ext_resource type="AudioStream" uid="uid://7br0acdcnbja" path="res://src/misc/monster_walk.wav" id="2_35mlp"]
 [ext_resource type="Texture2D" uid="uid://cwtaewn0ro2ku" path="res://src/models/wolf/Injured Idle_wolf_0.png" id="3_uh4m0"]
 

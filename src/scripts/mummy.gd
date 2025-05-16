@@ -40,7 +40,7 @@ func move_along_path():
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
 		speed = 3
 
-		if player_locked and player_caught():
+		if pause_timer.is_stopped() and player_locked and player_caught():
 			Global.victory = false
 			get_tree().change_scene_to_file("res://src/end.tscn")
 			return

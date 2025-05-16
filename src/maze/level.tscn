@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwpoguj18u1xt" path="res://src/maze/player.tscn" id="1_g7mpk"]
 [ext_resource type="Texture2D" uid="uid://co66jk14munif" path="res://src/textures/sand.jpg" id="2_g67j4"]
-[ext_resource type="PackedScene" uid="uid://c2la84prxkei5" path="res://src/maze/minotaur.tscn" id="3_6nv3x"]
+[ext_resource type="PackedScene" uid="uid://c2la84prxkei5" path="res://src/maze/mummy.tscn" id="3_6nv3x"]
 [ext_resource type="MeshLibrary" uid="uid://dowpf55i8ral5" path="res://src/maze/meshWithTexture.meshlib" id="4_k7auq"]
 [ext_resource type="Texture2D" uid="uid://bp2q0lnxtsmtd" path="res://src/textures/battery.png" id="5_0kndr"]
 [ext_resource type="Texture2D" uid="uid://by45csd7dbc5d" path="res://src/textures/progress.png" id="6_3y2hn"]

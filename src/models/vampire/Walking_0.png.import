@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vquau0vhg57h"
-path.s3tc="res://.godot/imported/Idle_vamp_0.png-16b056ddc9c120489f6da8a654254acf.s3tc.ctex"
+uid="uid://b3g4ee36an0ov"
+path.s3tc="res://.godot/imported/Walking_0.png-35bb599065c91ac9775bf1bc8bce700c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://src/models/vampire/Idle_vamp_0.png"
-dest_files=["res://.godot/imported/Idle_vamp_0.png-16b056ddc9c120489f6da8a654254acf.s3tc.ctex"]
+source_file="res://src/models/vampire/Walking_0.png"
+dest_files=["res://.godot/imported/Walking_0.png-35bb599065c91ac9775bf1bc8bce700c.s3tc.ctex"]
 
 [params]
 

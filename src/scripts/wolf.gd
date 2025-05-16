@@ -7,21 +7,31 @@ extends CharacterBody3D
 @onready var anim = $"wolf/AnimationPlayer"
 
 
-var waypoints := [
-	Vector3(-132, 0, 33),
-	Vector3(-50, 0, 47),
-	Vector3(89, 0, 38),
-	Vector3(-44, 0, 51),
-	Vector3(-71, 0, 62),
-	Vector3(-41, 0, 45),
-	Vector3(48, 0, 38),
-	Vector3(-103, 0, 52),
-	Vector3(-95, 0, 23),
-	Vector3(-13, 0, 32),
-	Vector3(75, 0, 37),
-	Vector3(-134, 0, 32),
-];
-var speed := 3 
+var waypoints := [Vector3(7, 0, -58),
+Vector3(80, 0, -58),
+Vector3(23, 0, 34),
+Vector3(-138, 0, -43),
+Vector3(-117, 0, -66),
+Vector3(138, 0, -88),
+Vector3(97, 0, -17),
+Vector3(91, 0, -41),
+Vector3(127, 0, 77),
+Vector3(28, 0, -33),
+Vector3(101, 0, 58),
+Vector3(56, 0, -56),
+Vector3(34, 0, -9),
+Vector3(75, 0, -16),
+Vector3(-136, 0, -80),
+Vector3(135, 0, 32),
+Vector3(-119, 0, -116),
+Vector3(72, 0, -37),
+Vector3(-122, 0, -5),
+Vector3(142, 0, -27),
+Vector3(40, 0, 65),
+Vector3(-106, 0, -19),
+Vector3(60, 0, -14),
+Vector3(-135, 0, 49)]
+var speed := 4 
 var player_locked := false
 var rng := RandomNumberGenerator.new()
 
@@ -51,9 +61,9 @@ func move_along_path():
 	var direction = local_destination.normalized()
 
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
-		speed = 3
+		speed = 4
 
-		if player_locked and player_caught():
+		if pause_timer.is_stopped() and player_locked and player_caught():
 			Global.victory = false
 			get_tree().change_scene_to_file("res://src/end.tscn")
 

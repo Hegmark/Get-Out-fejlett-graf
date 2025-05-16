@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtmcdistvmgcp"]
+[gd_scene load_steps=5 format=3 uid="uid://dtmcdistvmgcp"]
 
 [ext_resource type="Script" uid="uid://c8xan7f6awc8" path="res://src/scripts/player.gd" id="1_0d2n7"]
 [ext_resource type="AudioStream" uid="uid://ccwd0d1bkaj6p" path="res://src/misc/breathing.wav" id="2_yn35w"]
 [ext_resource type="AudioStream" uid="uid://da2vt0ejurpm5" path="res://src/misc/footsteps-grass.wav" id="3_0d2n7"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_sh265"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4flbx"]
 radius = 0.377311
@@ -13,9 +11,6 @@ radius = 0.377311
 lock_rotation = true
 linear_damp = 3.0
 script = ExtResource("1_0d2n7")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_sh265")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_4flbx")
