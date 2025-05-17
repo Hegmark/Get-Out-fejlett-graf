@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=4 uid="uid://b7qd3ncle0u3g"]
 
 [ext_resource type="Script" uid="uid://dvuqqcrx0q2t5" path="res://src/scripts/mummy.gd" id="1_3vq6h"]
-[ext_resource type="AudioStream" uid="uid://7br0acdcnbja" path="res://src/misc/monster_walk.wav" id="2_35mlp"]
+[ext_resource type="AudioStream" uid="uid://earuiby23th5" path="res://src/misc/monster-grass.wav" id="2_6ejoa"]
 [ext_resource type="Texture2D" uid="uid://cwtaewn0ro2ku" path="res://src/models/wolf/Injured Idle_wolf_0.png" id="3_uh4m0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tsmwf"]
@@ -560,7 +560,7 @@ shape = SubResource("CapsuleShape3D_jaynm")
 one_shot = true
 
 [node name="footsteps" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_35mlp")
+stream = ExtResource("2_6ejoa")
 volume_db = -8.0
 unit_size = 15.0
 autoplay = true

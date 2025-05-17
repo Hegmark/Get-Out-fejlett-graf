@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4cq1erjod1yr" path="res://src/maze/key.tscn" id="7_ws5a7"]
 [ext_resource type="Script" uid="uid://bkww722ia8jhu" path="res://src/scripts/key_maze.gd" id="8_iymek"]
 [ext_resource type="Texture2D" uid="uid://ddxqtkxpnslns" path="res://src/textures/dungeon_texture.png" id="8_xtg1r"]
-[ext_resource type="AudioStream" uid="uid://bavgrgch0i5ve" path="res://src/misc/1-Cave of Despair/Cave of Despair LOOP.wav" id="9_cvmrh"]
+[ext_resource type="AudioStream" uid="uid://cwruikwwfb436" path="res://src/misc/background.mp3" id="10_iymek"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_68xyb"]
 sky_top_color = Color(0.00512726, 0.0489585, 0.112566, 1)
@@ -130,6 +130,12 @@ environment = SubResource("Environment_dh7pt")
 [node name="Player" parent="." groups=["navi"] instance=ExtResource("1_g7mpk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.855673, 2.05, 48.2828)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855673, -2.05, -48.2828)
+stream = ExtResource("10_iymek")
+volume_db = -8.0
+autoplay = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.663439, 0.707876, 0.242405, -0.734564, 0.554558, 0.390999, 0.142352, -0.437466, 0.887896, 0.40795, 28.04, 79.9244)
 light_color = Color(0.370364, 0.370364, 0.370364, 1)
@@ -198,8 +204,3 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 1.76996, 0.039257)
 shape = SubResource("BoxShape3D_xtg1r")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_cvmrh")
-volume_db = -8.0
-autoplay = true

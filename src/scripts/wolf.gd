@@ -31,7 +31,7 @@ Vector3(40, 0, 65),
 Vector3(-106, 0, -19),
 Vector3(60, 0, -14),
 Vector3(-135, 0, 49)]
-var speed := 4 
+var speed := 10
 var player_locked := false
 var rng := RandomNumberGenerator.new()
 
@@ -61,7 +61,7 @@ func move_along_path():
 	var direction = local_destination.normalized()
 
 	if (player_locked and local_destination.length() <= 1.5) or local_destination.length() <= 0.5:
-		speed = 4
+		speed = 10
 
 		if pause_timer.is_stopped() and player_locked and player_caught():
 			Global.victory = false
@@ -104,4 +104,4 @@ func player_caught():
 	
 func _start_pause():
 	if pause_timer.is_stopped():
-		pause_timer.start(12)
+		pause_timer.start(15)

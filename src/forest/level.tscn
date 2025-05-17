@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bp2q0lnxtsmtd" path="res://src/textures/battery.png" id="5_xoval"]
 [ext_resource type="Script" uid="uid://cv64o60g6175v" path="res://src/scripts/wolf.gd" id="6_e67od"]
 [ext_resource type="Texture2D" uid="uid://by45csd7dbc5d" path="res://src/textures/progress.png" id="6_wf3lt"]
-[ext_resource type="AudioStream" uid="uid://bavgrgch0i5ve" path="res://src/misc/1-Cave of Despair/Cave of Despair LOOP.wav" id="9_1jd4a"]
 [ext_resource type="Texture2D" uid="uid://ddxqtkxpnslns" path="res://src/textures/dungeon_texture.png" id="9_5qep4"]
+[ext_resource type="AudioStream" uid="uid://cwruikwwfb436" path="res://src/misc/background.mp3" id="9_e67od"]
 [ext_resource type="PackedScene" uid="uid://ba4pfx6uux30d" path="res://src/forest/key.tscn" id="10_5qep4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_68xyb"]
@@ -140,6 +140,12 @@ light_energy = 0.964
 [node name="Player" parent="." groups=["navi"] instance=ExtResource("1_5qep4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, -2.46253)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.35, 2.46253)
+stream = ExtResource("9_e67od")
+volume_db = -45.0
+autoplay = true
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_4q7qo")
 
@@ -200,11 +206,6 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012085, 1.76996, 0.039257)
 shape = SubResource("BoxShape3D_8t61b")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_1jd4a")
-volume_db = -8.0
-autoplay = true
 
 [node name="key" parent="." instance=ExtResource("10_5qep4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56672, 0, 0)

@@ -417,7 +417,7 @@ one_shot = true
 
 [node name="footsteps" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_icwhv")
-volume_db = -8.0
+volume_db = -12.0
 autoplay = true
 
 [node name="Walking_mummy" type="Node3D" parent="."]

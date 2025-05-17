@@ -1,11 +1,12 @@
 [gd_scene load_steps=12 format=4 uid="uid://d0ri1tte535u3"]
 
 [ext_resource type="Script" uid="uid://g3ok5yt4xc1k" path="res://src/scripts/vampire.gd" id="1_wihgt"]
-[ext_resource type="AudioStream" uid="uid://7br0acdcnbja" path="res://src/misc/monster_walk.wav" id="2_s5t5s"]
+[ext_resource type="AudioStream" uid="uid://cblhlya2bpjat" path="res://src/misc/footsteps-stone2.wav" id="2_wihgt"]
 [ext_resource type="Texture2D" uid="uid://b3g4ee36an0ov" path="res://src/models/vampire/Walking_0.png" id="3_wihgt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wihgt"]
-radius = 0.3151
+radius = 0.257662
+height = 1.68903
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2boji"]
 resource_name = "M_HorrorCharacter.015"
@@ -562,7 +563,9 @@ _data = {
 }
 
 [node name="vampire" type="CharacterBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 collision_layer = 4
+safe_margin = 0.5
 script = ExtResource("1_wihgt")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -571,8 +574,8 @@ script = ExtResource("1_wihgt")
 one_shot = true
 
 [node name="footsteps" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_s5t5s")
-volume_db = -8.0
+stream = ExtResource("2_wihgt")
+volume_db = -15.0
 unit_size = 15.0
 autoplay = true
 
